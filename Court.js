@@ -38,8 +38,10 @@ $('#clear').click(function(e){
 
 
 function onClick(e){
-    var x = e.clientX - canvas.offsetLeft;
-    var y = e.clientY - canvas.offsetTop;
+    //var x = e.clientX - canvas.offsetLeft; スクロール時にずれる
+    //var y = e.clientY - canvas.offsetTop;　スクロール時にずれる
+    var x = e.pageX - canvas.offsetLeft;
+    var y = e.pageY - canvas.offsetTop;
     drawShot(x,y,1,1);
 }
 
