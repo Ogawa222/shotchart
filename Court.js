@@ -71,8 +71,18 @@ function drawShot(x,y){
 canvas.addEventListener('click', onClick, false);
 
 
-// クッキー機能
+// クッキー認証機能
 const agree = Cookies.get('cookie-agree');
+const panel = document.getElementById('privacy-panel');
 document.getElementById('agreebtn').onclick = function(){
-    Cookies.set('cookie-agree', 'yes', {expires:1});
+    if(agree === 'yes'){
+        document.body.removeChild(panel);
+    }else{
+        Cookies.set('cookie-agree', 'yes', {expires:1});
+        document.body.removeChild(panel);
+    }
+};
+// クッキー削除機能
+document.getElementById('removebtn').onclick = function(){
+    Cookies.remove('cookie-agree');
 };
