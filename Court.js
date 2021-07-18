@@ -74,6 +74,9 @@ canvas.addEventListener('click', onClick, false);
 // クッキー認証機能
 const agree = Cookies.get('cookie-agree');
 const panel = document.getElementById('privacy-panel');
+if (Cookies.get('cookie-agree') === 'yes'){
+    document.body.removeChild(panel);
+};
 document.getElementById('agreebtn').onclick = function(){
     if(agree === 'yes'){
         document.body.removeChild(panel);
