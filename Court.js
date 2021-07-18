@@ -69,3 +69,10 @@ function drawShot(x,y){
 
 // イベントリスナーを補足すると。その要素内で発生したイベントを補足できる
 canvas.addEventListener('click', onClick, false);
+
+
+// クッキー機能
+const agree = Cookies.get('cookie-agree');
+document.getElementById('agreebtn').onclick = function(){
+    Cookies.set('cookie-agree', 'yes', {expires:1});
+};

@@ -3,6 +3,9 @@
 #space1{
     height: 100px;
 }
+#space2{
+    height: 50px;
+}
 
 .element{
     float: left;
