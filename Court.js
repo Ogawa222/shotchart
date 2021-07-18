@@ -92,5 +92,6 @@ if (document.getElementById('agreebtn') != null){
 }
 // クッキー削除機能
 document.getElementById('removebtn').onclick = function(){
+    console.log('クッキーを削除します');
     Cookies.remove('cookie-agree');
 };
