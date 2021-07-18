@@ -77,7 +77,9 @@ const panel = document.getElementById('privacy-panel');
 document.getElementById('agreebtn').onclick = function(){
     if(agree === 'yes'){
         document.body.removeChild(panel);
+        console.log('クッキーを確認しました。');
     }else{
+        console,log('区クッキーを確認できません。')
         Cookies.set('cookie-agree', 'yes', {expires:1});
         document.body.removeChild(panel);
     }
