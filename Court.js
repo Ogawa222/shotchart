@@ -78,7 +78,7 @@ if (Cookies.get('cookie-agree') === 'yes'){
     console.log('表示しない')
     document.body.removeChild(panel);
 };
-if (document.getElementById('agreebtn') != undifined){
+if (document.getElementById('agreebtn') != null){
     document.getElementById('agreebtn').onclick = function(){
         if(agree === 'yes'){
             document.body.removeChild(panel);
