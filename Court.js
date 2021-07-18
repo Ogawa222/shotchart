@@ -78,18 +78,16 @@ if (Cookies.get('cookie-agree') === 'yes'){
     console.log('表示しない')
     document.body.removeChild(panel);
 };
-if (document.getElementById('agreebtn') != null){
-    document.getElementById('agreebtn').onclick = function(){
-        if(agree === 'yes'){
-            document.body.removeChild(panel);
-            console.log('クッキーを確認しました。');
-        }else{
-            console.log('クッキーを確認できません。')
-            Cookies.set('cookie-agree', 'yes', {expires:7});
-            document.body.removeChild(panel);
-        }
-    };
-}
+document.getElementById('agreebtn').onclick = function(){
+    if(agree === 'yes'){
+        document.body.removeChild(panel);
+        console.log('クッキーを確認しました。');
+    }else{
+        console.log('クッキーを確認できません。')
+        Cookies.set('cookie-agree', 'yes', {expires:7});
+        document.body.removeChild(panel);
+    }
+};
 // クッキー削除機能
 document.getElementById('removebtn').onclick = function(){
     console.log('クッキーを削除します');
