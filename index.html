@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>シュートチャート</title>
     <link rel="stylesheet" href="Court.css">
-    <link rel="stylesheet" href="panel.css">
+    <script src="exportCSV.js"></script>
 </head>
 <body>
     <div id="space1"></div>
@@ -24,7 +24,9 @@
             </div>
         </div>
         <div id="tran_link">
-            <a href="pastData.html">check past data</a>
+            <a href="pastData.html">check past data</a></br>
+            <p></p></br>
+            <button type="button" onclick="output();return false;">CSV</button>
         </div>
         <div class="court">
             <canvas id="can" width="500" height="450"></canvas>
@@ -61,6 +63,24 @@ function draw(){
         context.lineTo(265,10);
         context.stroke();
     }
+}
+
+//日付の取得
+function getNowYMDHM(){
+  var dt = new Date();
+  var y = dt.getFullYear();
+  var m = ("00" + (dt.getMonth()+1)).slice(-2);
+  var d = ("00" + dt.getDate()).slice(-2);
+  var h = ("00" + dt.getHours()).slice(-2);
+  var mi = ("00" + dt.getMinutes()).slice(-2);
+  var result = y + m + d + h + mi + "Rex";
+  return result;
+}
+//ファイル名の設定
+var filename = getNowYMDHM();
+//ファイルの出力
+function output(){
+    exportCSV(record,',', filename);
 }
 </script>
 <script src="jquery-3.4.1.min.js"></script>
