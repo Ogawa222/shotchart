@@ -7,6 +7,7 @@
 .element{
     float: left;
     left: 30px;
+    margin: 10px;
 }
 
 .mode{
@@ -29,4 +30,11 @@
     height: 100%;
     margin: auto;
     border: 5px solid black;
+}
+
+#tran_link {
+    color: blue;
+    text-decoration: underline;
+    float: right;
+    margin: 0% 10% 0% 3%;
 }
