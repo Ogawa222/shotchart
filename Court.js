@@ -65,6 +65,7 @@ function drawShot(x,y){
     //履歴取得
     history.push(context.getImageData(0,0,canvas.width,canvas.height));
     change = 1;
+    console.log(history);
 }
 
 // イベントリスナーを補足すると。その要素内で発生したイベントを補足できる
