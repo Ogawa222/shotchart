@@ -71,24 +71,3 @@ function drawShot(x,y){
 // イベントリスナーを補足すると。その要素内で発生したイベントを補足できる
 canvas.addEventListener('click', onClick, false);
 
-
-// クッキー認証機能
-const agree = Cookies.get('cookie-agree');
-const panel = document.getElementById('privacy-panel');
-
-
-if(agree === 'yes'){
-    document.body.removeChild(panel);
-    console.log('クッキーを確認しました。');
-}else{
-    console.log('クッキーを確認できません。')
-    document.getElementById('agreebtn').onclick = function(){
-    Cookies.set('cookie-agree', 'yes', {expires:1});
-    document.body.removeChild(panel);
-    }
-};
-// クッキー削除機能
-document.getElementById('removebtn').onclick = function(){
-    console.log('クッキーを削除します');
-    Cookies.remove('cookie-agree');
-};
