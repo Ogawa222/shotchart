@@ -78,14 +78,15 @@ if (Cookies.get('cookie-agree') === 'yes'){
     console.log('表示しない')
     document.body.removeChild(panel);
 };
-document.getElementById('agreebtn').onclick = function(){
-    if(agree === 'yes'){
-        document.body.removeChild(panel);
-        console.log('クッキーを確認しました。');
-    }else{
-        console.log('クッキーを確認できません。')
-        Cookies.set('cookie-agree', 'yes', {expires:7});
-        document.body.removeChild(panel);
+
+if(agree === 'yes'){
+    document.body.removeChild(panel);
+    console.log('クッキーを確認しました。');
+}else{
+    console.log('クッキーを確認できません。')
+    document.getElementById('agreebtn').onclick = function(){
+    Cookies.set('cookie-agree', 'yes', {expires:1});
+    document.body.removeChild(panel);
     }
 };
 // クッキー削除機能
