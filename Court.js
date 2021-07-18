@@ -15,6 +15,7 @@ $('#cancel').click(function(e){
     if(change === 1){
         history.pop();
         id = history.pop();
+        context.putImageData(id,0,0);
         change = -1;
     }else if(history.length > 1){
         id = history.pop();
@@ -63,7 +64,7 @@ function drawShot(x,y){
 
     //履歴取得
     history.push(context.getImageData(0,0,canvas.width,canvas.height));
-    change = -1;
+    change = 1;
 }
 
 // イベントリスナーを補足すると。その要素内で発生したイベントを補足できる
